@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- スマホでの表示倍率を固定し、横揺れを防ぐ必須タグ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>六千石 おしらせ LINE ご利用ガイド</title>
+    <style>
+        /* ==========================================
+           LINEブラウザ・スマホ完全最適化スタイル
+        ========================================== */
+        
+        /* 全要素のサイズ計算を枠線込みにして横はみ出しを防止 */
+        * {
+            box-sizing: border-box;
+            word-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f0f4f8; /* 少し落ち着いた背景色 */
+            color: #1a1a1a; /* 文字色を濃くしてコントラストUP */
+            line-height: 1.8;
+            margin: 0;
+            padding: 10px; /* スマホ画面の端に少し余白を作る */
+            font-size: 18px; /* ★ベース文字サイズを大きく（通常16pxのところ18px） */
+        }
+
+        .container {
+            max-width: 100%; /* スマホでは画面幅いっぱい（余白はbodyで確保） */
+            background: #ffffff;
+            padding: 25px 15px; /* スマホ向けの左右padding */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* ヘッダー・タイトル部分 */
+        .header-banner {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(29, 53, 87, 0.2);
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 1.6em; /* タイトルも大きく */
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            color: #e63946;
+            font-size: 1.4em; /* 見出しを明確に大きく */
+            margin-top: 45px;
+            border-bottom: 3px solid #f1faee;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        /* ステップ解説カード（スマホで読みやすいブロック化） */
+        .step-card {
+            background: #f8f9fa;
+            border-left: 6px solid #457b9d;
+            padding: 20px 15px; /* タップしやすい広い余白 */
+            margin-bottom: 25px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .step-card h3 {
+            margin: 0 0 15px 0;
+            color: #1d3557;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+        .step-badge {
+            background: #457b9d;
+            color: white;
+            width: 32px; /* バッジを大きく */
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            font-size: 1em;
+            flex-shrink: 0; /* 文字が長くなってもバッジが潰れないように */
+        }
+
+        /* スマホ画面を模したデモUI（よりリアルなLINE風に） */
+        .demo-screen {
+            background: #7494c0; /* LINEのトーク画面風の背景色 */
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+        .demo-bubble {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 18px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+            line-height: 1.6;
+        }
+        .btn-flex {
+            display: inline-block;
+            background: #ffffff;
+            color: #219ebc;
+            padding: 12px 20px; /* ★実際のスマホで押しやすい大きさに */
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 6px 4px;
+            font-size: 1em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid #219ebc;
+        }
+        .btn-red {
+            color: #e63946;
+            border-color: #e63946;
+        }
+
+        /* 普段の使い方ブロック */
+        .focus-box {
+            border: 3px dashed #1d3557;
+            background: #ffffff;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+        .focus-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #e2e8f0;
+            display: block; /* スマホで横幅いっぱいにする */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 0 0 15px 0;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+        
+        /* 画像のスマホ最適化 */
+        .focus-box img {
+            width: 100%; /* ★スマホの横幅いっぱいに表示して文字を読ませる */
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 1px solid #ddd;
+            display: block; /* 下部の隙間を消す */
+        }
+
+        /* 総会ルールのブロック */
+        .special-rule {
+            background: #e2e8f0;
+            padding: 20px 15px;
+            border-radius: 10px;
+            font-size: 0.95em;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-banner">
+        <h1>六千石 おしらせ LINE</h1>
+    </div>
+
+    <h2>🔰 はじめの登録<br>（3回押すだけ）</h2>
+    <p>最初に１回だけ、あなたのお住まいを登録します。</p>
+
+    <div class="step-card">
+        <h3><span class="step-badge">1</span>【組】を選ぶ</h3>
+        <p>画面に数字のボタンが出ます。あなたの「組」を指で押してください。</p>
+        <div class="demo-screen">
+            <div class="demo-bubble">👇下にある【組】をタップしてね！<br>（👈 画面をヨコになでると ほかの数字もでるよ 👉）</div><br>
+            <span class="btn-flex">1組</span> <span class="btn-flex">2組</span> <span class="btn-flex">3組</span>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <h3><span class="step-badge">2</span>【番地】を選ぶ</h3>
+        <p>組を選ぶと、次は「番地」が出ます。同じようにボタンを押してください。<br>
+        <strong style="color: #e63946; display: block; margin-top: 10px;">※番地が無い方は、最初の赤いボタンを押してください。</strong></p>
+        <div class="demo-screen">
+            <span class="btn-flex btn-red">番地無し</span> <span class="btn-flex">甲38番地</span> <span class="btn-flex">5番地</span>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <h3><span class="step-badge">3</span>【号】を選ぶ</h3>
+        <p>最後に「号」を<br>
+        <strong style="font-size: 1.1em; color: #1d3557; background: #fff; padding: 5px 10px; border-radius: 5px; display: inline-block; margin: 10px 0;">百の位 👉 十の位 👉 一の位</strong><br>
+        の順番で３回押せば完了です！</p>
+    </div>
+
+
+    <h2>📖 普段の使い方</h2>
+    
+    <div class="focus-box">
+        <div class="focus-text">
+            画面のいちばん左下にある<br>
+            <span style="color: #e63946; font-size: 1.2em;">【 👈️ ⌨️入力・ﾒﾆｭ~ 】</span><br>
+            を押すだけ！
+        </div>
+        <p style="margin: 0; font-size: 1em; color: #444; font-weight: bold;">
+            回覧板やゴミの日など、見たいメニューがパッと開きます。
+        </p>
+        
+        <!-- Google Driveの画像を画面幅いっぱいに表示 -->
+        <img src="https://drive.google.com/uc?export=view&id=14WW2Ix0HKOwm2vbSPSG6H0ywfibOSQ0i" 
+             alt="一般メニューの画像" 
+             onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20fill%3D%22%23eeeeee%22%20width%3D%22600%22%20height%3D%22400%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20dy%3D%2210.5%22%20font-weight%3D%22bold%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3E%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E7%94%BB%E5%83%8F%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99%3C%2Ftext%3E%3C%2Fsvg%3E';">
+    </div>
+
+    <h2 style="margin-top: 50px; color: #457b9d;">📢 年に一度の<br>「総会」について</h2>
+    <div class="special-rule">
+        <p style="margin-top: 0;">年に一度の総会（役員改正）の時だけ、画面に<strong>特別な「役職を選ぶボタン」</strong>が出ます。</p>
+        <p style="font-weight: bold; color: #e63946; border-left: 4px solid #e63946; padding-left: 10px;">
+            総会が終わった後はボタンが押せなくなり、新しく加入した方は自動的に「一般」からのスタートとなります。
+        </p>
+        <p style="margin-bottom: 0; font-size: 0.9em; color: #666;">
+            （※後から役員になる場合は、事務局が手動で設定します）
+        </p>
+    </div>
+
+    <div class="footer-note">
+        ご不明な点は、お近くの役員まで<br>お気軽にお声がけください。<br><br>
+        <strong>六千石 町内会事務局</strong>
+    </div>
+
+</div>
+
+</body>
+</html>
